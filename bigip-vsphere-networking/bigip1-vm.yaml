@@ -69,6 +69,11 @@ spec:
         cloudInitConfigDrive:
           userData: |-
             #cloud-config
+            chpasswd:
+              list: |
+                root:ChangeMe
+                admin:ChangeMe
+              expire: False
             write_files:
               - path: /config/cloud/config.sh
                 permissions: 0755
