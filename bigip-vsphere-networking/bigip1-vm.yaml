@@ -6,7 +6,7 @@ metadata:
   labels:
     f5type: bigip-ve
   annotations:
-    k8s.v1.cni.cncf.io/networks: "bigip1-mgmt,bigip1-ha,bigip1-ext,bigip1-int"
+    k8s.v1.cni.cncf.io/networks: "net-mgmt,net-ha,net-ext,net-int"
     # Low latency settings https://docs.openshift.com/container-platform/4.15/scalability_and_performance/low_latency_tuning/cnf-provisioning-low-latency-workloads.html#cnf-configuring-high-priority-workload-pods_cnf-provisioning-low-latency
     cpu-quota.crio.io: "disable" 
     cpu-load-balancing.crio.io: "disable" 
@@ -22,14 +22,13 @@ spec:
       affinity:
         podAntiAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
-          - podAffinityTerm:
-              labelSelector:
-                matchExpressions:
-                - key: "bigip-unit"
-                  operator: In
-                  values:
-                  - unit-2
-              topologyKey: "kubernetes.io/hostname"
+          - labelSelector:
+            matchExpressions:
+            - key: "bigip-unit"
+              operator: In
+              values:
+              - unit-2
+          topologyKey: "kubernetes.io/hostname"
       domain:
         cpu:
           sockets: 1
@@ -97,14 +96,14 @@ spec:
       networks:
       - name: mgmt
         multus:
-          networkName: bigip1-mgmt
+          networkName: net-mgmt
       - name: int
         multus:
-          networkName: bigip1-int
+          networkName: net-int
       - name: ext
         multus:
-          networkName: bigip1-ext
+          networkName: net-ext
       - name: ha
         multus:
-          networkName: bigip1-ha
+          networkName: net-ha
 
