@@ -23,12 +23,12 @@ spec:
         podAntiAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
           - labelSelector:
-            matchExpressions:
-            - key: "bigip-unit"
-              operator: In
-              values:
-              - unit-2
-          topologyKey: "kubernetes.io/hostname"
+              matchExpressions:
+              - key: "bigip-unit"
+                operator: In
+                values:
+                - unit-2
+            topologyKey: "kubernetes.io/hostname"
       domain:
         cpu:
           sockets: 1
