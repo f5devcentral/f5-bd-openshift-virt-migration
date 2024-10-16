@@ -36,6 +36,7 @@ spec:
           cores: 4
           threads: 1
           dedicatedCpuPlacement: true
+          isolateEmulatorThread: true
         resources:
           # memory must be 2Gi per core at least
           requests:
