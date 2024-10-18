@@ -4,4 +4,4 @@ https://community.f5.com/kb/technicalarticles/vmware-to-red-hat-openshift-virtua
 
 The VM optimization settings are are inspired by https://docs.openshift.com/container-platform/4.16/virt/vm_networking/virt-using-dpdk-with-sriov.html
 
-There are additional optimization settings in Kubelet.
+For platform optimization, I have used additional optimization settings in Kubelet besides the ones indicated in the link above. Yet to try is the use full-pcpus-only=true.
