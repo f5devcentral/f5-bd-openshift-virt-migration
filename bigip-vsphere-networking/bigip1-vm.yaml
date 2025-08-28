@@ -74,7 +74,7 @@ spec:
                 owner: root:root
                 content: |
                   #!/bin/bash
-                  # Modify or eliminate the following statement according to https://cdn.f5.com/product/bugtracker/ID1492337.html
+                  # If using BIG-IP prior 17.5.1 modify the following statement according to https://cdn.f5.com/product/bugtracker/ID1492337.html
                   # echo "ndal mtu 1400 1af4:1041" >> /config/tmm_init.tcl
 
                   source /usr/lib/bigstart/bigip-ready-functions
