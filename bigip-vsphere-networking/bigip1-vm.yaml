@@ -32,7 +32,7 @@ spec:
           cores: 2
           threads: 2
         resources:
-          # memory must be 2Gi per Logical Threads as per https://my.f5.com/manage/s/article/K15468
+          # memory must be 2Gi per Logical Thread as per https://my.f5.com/manage/s/article/K15468
           requests:
             memory: 8Gi
           limits:
