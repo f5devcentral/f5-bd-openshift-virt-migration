@@ -28,11 +28,11 @@ spec:
       domain:
         cpu:
           sockets: 1
-          # Adjust cores to the desired number of vCPUs
-          cores: 4
+          # Adjust cores to the desired number of vCPUs/Logical Threads
+          cores: 2
           threads: 2
         resources:
-          # memory must be 2Gi per core at least
+          # memory must be 2Gi per Logical Threads as per https://my.f5.com/manage/s/article/K15468
           requests:
             memory: 8Gi
           limits:
